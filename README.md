@@ -1,17 +1,22 @@
 # initcpp
 
-A python script for quickly creating a new CMake based C++ project, with Catch2 as the testing framework. It creates the following tree of files:
+initcpp is a script for bootstrapping a minimal C++ project based on CMake. The end result is a directory with the following contents:
 
 ```
-project_name/
+main.cpp
+.gitignore
+CMakeLists.txt
+README.md
+tests/
+  catch.hpp
   main.cpp
-  .gitignore
   CMakeLists.txt
-  tests/
-    catch.hpp
-    main.cpp
-    CMakeLists.txt
-  build/
+build/
 ``` 
 
-Then runs `cmake` on the `build` directory and compiles the project.
+It performs the following steps:
+
+1. Creates a directory with the name of the project and all the contents listed above (except `catch.hpp`).
+2. Downloads `catch.hpp` from the official GitHub repository.
+3. Calls `cmake ..` from the `build` directory.
+4. Compiles the project.

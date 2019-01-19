@@ -45,6 +45,9 @@ include_directories(t_$1 ${CMAKE_SOURCE_DIR})
 GIT_IGNORE = '''build
 '''
 
+README = '''# $1
+'''
+
 CATCH_URL = 'https://raw.githubusercontent.com/catchorg/Catch2/master/single_include/catch2/catch.hpp'
 
 p = argparse.ArgumentParser()
@@ -76,6 +79,9 @@ with open(os.path.join(PROJECT, 'CMakeLists.txt'), 'w') as f:
 
 with open(os.path.join(PROJECT, '.gitignore'), 'w') as f:
   f.write(GIT_IGNORE)
+
+with open(os.path.join(PROJECT, 'README.md'), 'w') as f:
+  f.write(README.replace('$1', PROJECT))
 
 with open(os.path.join(PROJECT, TESTS, 'main.cpp'), 'w') as f:
   f.write(MAIN_TESTS)
