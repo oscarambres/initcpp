@@ -16,7 +16,6 @@ build/
 
 It performs the following steps:
 
-1. Creates a directory with the name of the project and all the contents listed above (except `catch.hpp`).
-2. Downloads `catch.hpp` from the official GitHub repository.
-3. Calls `cmake ..` from the `build` directory.
-4. Compiles the project.
+1. Creates a directory with the name of the project and puts inside all the contents listed above (it downloads `catch.hpp` from the official GitHub repository).
+2. Calls `cmake ..` from the `build` directory.
+3. Compiles the project.
